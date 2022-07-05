@@ -1,0 +1,73 @@
+ansible GUI is cost --ansible is redhat product
+ansible push based machanisim
+no daemons--is service process its run in the background
+master and salve --control node is master // manager node
+pre-requiret for run the anisble ( python)
+Adhoc / playbook /Valut /roles
+adhoc commant --one task at the time
+Putty -Puttygen--Pageant-Visual studio code
+agentbase ---master have slave IP--slave also have msater Ip ( saltslack)
+agentless -- Master have slave ip (anisible)
+pip-python installation package -its a manual method
+pageant contain multiple pem key
+anisble configuraion file
+inventory file
+IF we user PIP 13 and 14 file will not available 
+if we install via yum and apt --13 and 14 file will available by default
+apt install python3-pip
+need ansible.cfg
+invenrtoy collection of slave hostname or IP address
+need to create inverntoy file
+allow agent forwarding
+need to make false in Host_key_checking= false in ansible.cfg file la
+#ansible all -i slave.txt -m ping (-m stants for module)
+#ansible all -i slave.txt -a "uname -a"  (-a is argument) "uname -a" is check the hostid
+#ansible all -i slave.txt -a "uptime"
+Yum is -install/update/remove/modify
+service/systemctl =enable/start/stop/shutdown/restart/disable
+anisble grouping [anyname]followed by IP
+Target --ALL  - particular -grouping
+**********
+-b is a become root user
+action call state--present/lates=install
+absent =uninstall
+started=start
+stopped=stop
+restarted=restart
+#ansible grouping -i invenroty.txt -m yum -a "name=httpd state=present/latets"
+#ansible grouping -i inventory-txt -m service or systemctl -a "name=httpd state=started"
+#ansible all -i inventory.txt -m user -a "name=Greens Password-greens123: -b
+password= not_loggin password
+ssh ec2-user@ipaddress
+#ansible all -i inventiory .txt -m copy -a "source=./data file path destination=./file path" -b
+adhoc cmd is one task at a time
+playbook run multitask at a time
+playbook should be in YAML
+play book is a indendation model
+run the yml script 
+#ansible-playbook -i invenroty.txt playnookname.yml --syntax-check (synatc -check its clear syntax check)
+idempotent is not override the program
+yam play book (tags) (skip)
+#ansible-playbook -i in.txt playbojj.yml --tags java(--skip-tags java)
+https://www.youtube.com/watch?v=x1ZgltVjQVM---nexus and docker
+https://www.youtube.com/watch?v=l_okG4KmfSQ&list=RDCMUCxGMOu0QDJYYc2pXndonKpQ&index=7 -terraform
+vault in ansible
+vault is security --
+ansible-vault encrypt filename.yaml
+after its asking for password to set
+if we edit the file via vi filename.yaml it will not open and not able to run the file also
+to view the encrypr file ---ansible-vault view filename.yml then enter the password
+change password : ansible-vault rekey filename.yml
+remove the encrypt : ansible-vault decrypt filename.yml
+run with encrypr : ansible-playbook -i inventory.txt filename.yml --vault-ask-p
+ansible-galaxy its manage roles
+ansible-galaxy init rolename (anyname)
+one foleder will create in name called (roles)of which we create 
+inside the folder default some of default templetes will create
+like (templates,READM.Md,files,default,handlers,tasks,meta,vars,tests)
+apt-get install tree
+tree rolename
+enter the ansible task in to task folder and main.yml and keep the file in files folder
+ansible-playbook -i in.txt ifanyfolderplease mention the foldername/roles.yaml
+task ---
+
